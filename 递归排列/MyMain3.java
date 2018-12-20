@@ -1,25 +1,28 @@
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map.Entry;
-import java.util.Set;
 
 public class MyMain3 {
 
 	public static void main(String[] args) {
-		String[] arr1 = { "1", "2" };
-		String[] arr2 = { "a", "b" };
-		String[] arr3 = { "A", "B" };
-		List<String[]> list = new ArrayList<String[]>();
+		ArrayList<String> arr1 = new ArrayList<String>();
+		arr1.add("1");
+		arr1.add("2");
+		ArrayList<String> arr2 = new ArrayList<String>();
+		arr2.add("a");
+		arr2.add("b");
+		ArrayList<String> arr3 = new ArrayList<String>();
+		arr3.add("B");
+		arr3.add("2");
+		List<ArrayList<String>> list = new ArrayList<ArrayList<String>>();
 		list.add(arr1);
 		list.add(arr2);
 		list.add(arr3);
 		test(list, arr1, "");
 	}
 
-	public static void test(List<String[]> list, String[] arr, String str) {
+	public static void test(List<ArrayList<String>> list, ArrayList<String> arr, String str) {
 		for (int i = 0; i < list.size(); i++) {
-			// 取得当前的数组
+			// 取得当前的list
 			if (i == list.indexOf(arr)) {
 				// 迭代数组
 				for (String st : arr) {
@@ -33,5 +36,4 @@ public class MyMain3 {
 			}
 		}
 	}
-
 }
