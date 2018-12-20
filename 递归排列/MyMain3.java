@@ -17,20 +17,22 @@ public class MyMain3 {
 		list.add(arr1);
 		list.add(arr2);
 		list.add(arr3);
-		test(list, arr1, "");
+		ArrayList<String> result = new ArrayList<String>();
+		test(list, arr1, "", result);
+		System.out.println(result);
 	}
 
-	public static void test(List<ArrayList<String>> list, ArrayList<String> arr, String str) {
+	public static void test(List<ArrayList<String>> list, ArrayList<String> arr, String str, ArrayList<String> result) {
 		for (int i = 0; i < list.size(); i++) {
 			// 取得当前的list
 			if (i == list.indexOf(arr)) {
 				// 迭代数组
 				for (String st : arr) {
-					st = str + st;
+					st = str + st + ";";
 					if (i < list.size() - 1) {
-						test(list, list.get(i + 1), st);
+						test(list, list.get(i + 1), st, result);
 					} else if (i == list.size() - 1) {
-						System.out.println(st);
+						result.add(st);
 					}
 				}
 			}
